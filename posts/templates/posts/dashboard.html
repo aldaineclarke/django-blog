@@ -1,0 +1,16 @@
+{% extends "posts/base.html"  %}
+{% load static %}
+
+{% block content %}
+<section>
+    
+    {% for post in posts %}
+        <div class="post-content">
+            <h4 class="post-title"><a href="{% url 'post-detail' post.id %}">{{post.title}}</a></h4>
+            <p class="post-body">{{post.body}}</p>
+            <p class="post-time"><i class="far fa-comment-dots pale"> 31</i><i class="fas fa-camera"> {{post.date_posted}}</i></p>
+        </div>
+    {% endfor %}
+
+</section> 
+{% endblock content %}

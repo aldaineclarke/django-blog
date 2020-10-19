@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Journey</title>
+    <link rel="stylesheet" href="{% static 'posts/CSS/blogmain.css'%}">
+    <script src="https://kit.fontawesome.com/7c2ff4380c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="mobile-nav">
+                <li class="navitem"> <img class="logo" src="{% static 'posts/IMG/logoBT.png' %}" alt="Logo for website"></li>
+                <li class="navitem"><a href="{% url 'index' %}">Home</a></li>
+                {% if request.user.is_authenticated %}
+                    <li class="right navitem">
+                        <a class="flex-align-justify-center" href="{% url 'profile'  %}">
+                            <!-- <span class="username">{{request.user.username}}</span> -->
+                            <img class="round thumbnailx1" src="{{request.user.profile.image.url}}" alt="">
+                        </a>
+                    </li>
+                    <li class="navitem"><a href="{% url 'logout'  %}">Logout</a></li>
+                
+                {% else %}
+                    <li class="navitem right"><a href="#"> Sign Up</a></li>
+                    <li class="navitem"><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+                
+
+            </ul>
+
+        </nav>
+    </header>
+    
+    <main>
+        {% block content%}
+
+        {% endblock content%}
+    </main>
+    <footer>
+        <div class="footlinks"></div>
+        <div class="copyright">
+            <p>
+                &copy; Copyright <span id="year"></span>. All Rights Reserved
+            </p>
+        </div>
+    
+    
+    </footer>
+    <script>
+        let currentYear = new Date();
+        let year = document.querySelector("#year");
+        year.innerHTML = currentYear.getFullYear();
+    
+    </script>
+    <script src="{% static 'posts/JS/index.js'%}"></script>
+
+</body>
+</html>

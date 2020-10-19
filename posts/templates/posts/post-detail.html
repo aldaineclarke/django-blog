@@ -1,0 +1,40 @@
+{% extends "posts/base.html"  %}
+{% load static  %}
+
+
+{% block content %}
+<section>
+    <h1>{{post.title}}</h1>
+    <div class="flex mt-1 mb-1">
+        <img class="round thumbnail"src="{% static 'posts/IMG/testimg.jpg' %}" alt="Author image">
+        <div class="ml-1 flex flex-column">
+            <p>{{post.author}}</p>
+            <p class="muted">{{post.date_posted}}</i></p>
+        </div>
+        
+    </div>
+    <div>
+        <p>{{post.body}}</p>
+    </div>
+</section>
+<section class="comment-section">
+    <div>
+        <h5>Comments: </h5>
+    </div>
+    <div class="commentlist mt-1">
+        {% for comment in comments %}
+        <div class="comment">
+            <div class="flex-align-justify-center">
+                <img src="round thumbnailx1" alt="Thumbnail of commenter">
+                <p class="ml-1"> {{comment.commenter}}</p>
+            </div>
+            <p class="mt-1">{{comment.comment}}</p>  
+        </div>
+        {% endfor %}
+
+
+    </div>
+
+</section>
+
+{% endblock content %}

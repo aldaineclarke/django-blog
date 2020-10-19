@@ -1,0 +1,18 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section>
+        <form method="POST" class="django">
+            <legend class="mt-1 mb-1">
+               <h2>Create Post</h2> 
+            </legend>
+            {% csrf_token %}
+            {{form}}
+            <div class="flex mt-1 mb-1">
+                <button class="submit-btn shadow">Create Post</button>
+            </div>
+        </form>
+    </section>
+
+{% endblock content %}

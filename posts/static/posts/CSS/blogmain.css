@@ -1,0 +1,332 @@
+:root{
+    --primary: #B4D7A2;
+    --secondary:#988270;
+    --pastelGrey:#C8D6B9;
+    --accent:rgba(18, 82, 32, 0.747);
+    --cancel: #CC8B97;
+    --dark:#836853;
+    
+}
+/* 
+=========================================================ELEMENT TAGS=====================================================
+ */
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+}
+section{
+    padding:10px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-weight: 700;
+    font-size:larger;
+
+}
+a{
+    color:dodgerblue;
+    text-decoration:none;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    height:10vh;
+    background-color:var(--pastelGrey) ;
+}
+main{
+    min-height: 80vh;
+}
+
+/* 
+=========================================================END ELEMENT TAGS================================================
+ */
+
+ /* 
+ =======================================================NAVIGATION======================================================
+ */
+.mobile-nav{
+    display:flex;
+    align-items: center;
+    height:3em;
+    background-color: var(--primary);
+
+    list-style-type: none;
+    
+    box-shadow: 0 1px 2px 2px rgba(0,0,0,0.07);
+
+}
+.navitem{
+    margin: 0 5px;
+}
+.navitem a {
+    color:var(--dark);
+}
+.mobile-nav .logo{
+    margin-top: 5px;
+    height:30px;
+}
+
+/* 
+=======================================================END NAVIGATION=====================================================
+*/
+/* 
+=======================================================CONTENT============================================================
+ */
+.borderless-django{
+    width:90%;
+}
+.borderless-django .helptext{
+    display:none;
+}
+.borderless-django input{
+    display:inline-block;
+    width:70%;
+    height:2.3em;
+    border-radius: 5px;
+    border: 1px solid var(--pastelGrey);
+    padding: 2px 5px;
+    margin:5px 0;
+}
+
+
+
+form.django{
+    width:80vw;
+    padding: 10px;
+    margin:0 auto;
+
+    border-radius: 10px;
+    border: 1px solid var(--accent);
+    box-shadow: 4px 5px 11px 11px rgba(0,0,0,0.07),
+    0px 1px 11px 0px rgba(0,0,0,0.07);
+    
+}
+
+form.django > input, form.django > textarea{
+    border:1px solid var(--pastelGrey);
+    border-radius: 5px;
+    width: 100%;
+    margin: 5px 0;
+    padding:2px 5px;
+
+}
+form.django > input{
+    height: 2.5em;
+    
+}
+form > input[type="file"]{
+    border:none;
+}
+.helptext{
+    display: inline-block;
+    margin: 5px;
+    width: 100%;
+    color:grey;
+    opacity:.7 ;
+}
+.helptext ul {
+    list-style-type: none;
+}
+.errorlist{
+    list-style-type: none;
+    margin:5px;
+    color:red;
+
+}
+
+.media{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.media-body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.post-wrapper{
+     margin: 20px 0;
+     display: grid;
+     grid-template-columns: 1fr 3fr;
+     border: 1px solid lightgrey;
+
+ }
+.post-content{
+     padding: 5px;
+ }
+.post-title{
+    color: grey;
+    padding:10px 0;
+    
+}
+.post-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.post-img img{
+    margin-top:5px;
+    width: 3em;
+    height: 3em;
+    border-radius:50%;
+
+    object-fit: cover;
+
+}
+.post-time{
+    display:flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    font-size: smaller;
+    color:rgba(0,0,0,0.27);
+    text-align:right;
+}
+.copyright{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(0,0,0,0.37);
+    font-size: smaller;
+}
+
+.thumbnail{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    object-position: center;
+
+}
+.thumbnailx1{
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    object-position: center;
+
+}
+.thumbnailx4{
+    height:10rem;
+    width:10rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 
+======================================================COMPONENTS==========================================================
+*/
+
+.submit-btn{
+    margin-left: auto;
+    padding: 5px;
+    background:var(--primary);
+    opacity:.7;
+    border:1px solid rgba(18, 82, 32, 0.747);
+    border-radius: 10px;
+
+}
+
+/*
+=======================================================UTILITIES========================================================== 
+ */
+
+.username{
+    padding-right: 3px;
+}
+.align-center{
+    align-items: center;
+}
+.flex{
+    display:flex;
+}
+.flex-align-justify-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-column{
+    flex-direction: column;
+}
+.justify-center{
+    justify-content: center;
+}
+.mt-1{
+    margin-top: 1em;
+}
+.mt-2{
+    margin-top: 1.5em;
+}
+.mt-3{
+    margin-top: 2em;
+}
+.mb-1{
+    margin-bottom: 1em;
+}
+.mb-2{
+    margin-bottom: 1.5em;
+}
+.mb-3{
+    margin-bottom: 2em;
+}
+.ml-1{
+    margin-left: 1em;
+}
+.ml-2{
+    margin-left: 1.5em;
+}
+.ml-3{
+    margin-left: 2em;
+}
+.mr-1{
+    margin-right: 1em;
+}
+.mr-2{
+    margin-right: 1.5em;
+}
+.mr-3{
+    margin-right: 2em;
+}
+.muted{
+    color: rgba(0,0,0,0.37);
+}
+.right{
+    margin-left:auto;
+}
+.round{
+    border-radius: 50%;
+}
+.space-between{
+    justify-content: space-between;
+}
+.shadow{
+    box-shadow:2px 4px 10px 5px rgba(0,0,0,0.07);
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+.text-center{
+    text-align: center;
+}
+
+/* Messages sent from backend */
+.message-success{
+    position:absolute;
+    z-index: 99;
+    opacity:.5;
+
+    background-color: green;
+
+}

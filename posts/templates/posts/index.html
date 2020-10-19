@@ -1,0 +1,35 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section>
+        <h2>Recent Topics:</h2>
+        {% for post in posts %}
+        <div class="post-wrapper">
+            <div class="post-img">
+                <img src="{% static 'posts/IMG/testimg.jpg' %}" alt="Author image">
+            </div>
+
+            <div class="post-content">
+                <h4 class="post-title"><a href="{% url 'post-detail' post.id %}">{{post.title}}</a></h4>
+                <p class="post-body">{{post.body}}</p>
+                <p class="post-time"><i class="far fa-comment-dots pale"> 31</i><i class="fas fa-camera"> {{post.date_posted}}</i></p>
+            </div>
+            
+        </div>
+        {% endfor %}
+
+        <div class="post-wrapper">
+            <div class="post-img">
+                <img src="{% static 'posts/IMG/testimg.jpg' %}" alt="Author image">
+            </div>
+
+            <div class="post-content">
+                <h4 class="post-title">Title of the blog post</h4>
+                <p class="post-body">This is the body of the post which of course include the main content that the user wants to get accross to the commenters</p>
+                <p class="post-time"><i class="far fa-comment-dots pale">31</i><i class="fas fa-camera"> Oct 10, 2020</i></p>
+            </div>
+            
+        </div>
+    </section>
+{% endblock content %}

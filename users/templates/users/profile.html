@@ -1,0 +1,35 @@
+{% extends 'posts/base.html' %} 
+
+{% block content %} 
+<!-- 'user' used below is from the django framework, not something we create, it hold information for the logged in user -->
+   <section>
+      <div class="flex-column flex-align-justify-center">
+         <img class="round thumbnailx4" src="{{user.profile.image.url}}" alt="missing default pic">
+         <div class="mt-1 flex-column flex-align-justify-center text-center">
+            <h2 class="account-heading">{{user.username}}</h2>
+            <p class="text-secondary">{{user.email}}</p>
+         </div>
+      </div>
+      <form method="POST" enctype="multipart/form-data" class="borderless-django">
+         <!-- This token means Cross Site request forgery, it protects forms against fraud requests -->
+         {% csrf_token %} 
+             <legend class="mt-1"><h2>Profile Information</h2></legend>
+             <!-- The vertical line is a filter, which allows for the contents to be filtered -->
+             
+             <div class="flex align-center space-between">
+                <label for="{{user_form.username.id_for_label}">Username:</label>
+               {{ user_form.username }}
+             </div>
+             <div class="flex align-center space-between">
+                <label for="{{user_form.email.id_for_label}}">Email: </label>
+               {{ user_form.email }}
+             </div>
+             {{ profile_form }}
+
+         <div class="mb-1 mt-1 flex">
+             <button class="submit-btn shadow" type="submit">Update</button>
+         </div>
+     </form>   
+   </section>
+
+{% endblock content %}

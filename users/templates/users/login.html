@@ -1,0 +1,24 @@
+{% extends 'posts/base.html' %} 
+
+{% block content %} 
+
+    <section>
+        <!-- This method indicates that the data entered will be posted/saved to the database. The view will work out the logic -->
+        <form method="POST" class="django">
+            <!-- This token means Cross Site request forgery, it protects forms against fraud requests -->
+            {% csrf_token %} 
+                <legend class="mt-1 mb-1">Log In</legend>
+                <!-- The vertical line is a filter, which allows for the contents to be filtered -->
+                {{ form }}
+            <div class="flex mt-1 mb-1">
+                <button class=" shadow submit-btn" type="submit">Login</button>
+            </div>
+        </form>
+        <div class="text-center mt-1">
+            <small class="">
+                Need An Account?<a class="ml-1" href="{% url 'register' %}">Sign Up</a>
+            </small>
+        </div>
+    </section>
+
+{% endblock content %}
